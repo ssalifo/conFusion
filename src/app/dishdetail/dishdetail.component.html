@@ -1,22 +1,24 @@
-<!-- <p>
-  dishdetail works! {{dishDetail.name}}
-</p> -->
-
-<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
-  fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0">
-
-  <div fxFlex *ngIf="dishDetail">
+<div
+  class="container"
+  fxLayout="row"
+  fxLayout.sm="column"
+  fxLayout.xs="column"
+  fxLayoutAlign.gt-md="space-around center"
+  fxLayoutGap="10px"
+  fxLayoutGap.xs="0"
+>
+  <div fxFlex *ngIf="dish">
     <div fxFlex="40">
       <!-- <p>Display the details of the Dish here</p> -->
       <mat-card>
         <mat-card-header>
           <mat-card-title>
-            <h3>Details : </h3>
+            <h3>Details :</h3>
           </mat-card-title>
         </mat-card-header>
-        <img mat-card-image src={{dishDetail.image}} alt={{dishDetail.name}}>
+        <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
         <mat-card-content>
-          {{ dishDetail.description }}
+          {{ dish.description }}
         </mat-card-content>
         <mat-card-actions>
           <button mat-button>LIKE</button>
@@ -29,25 +31,21 @@
       <mat-card>
         <mat-card-header>
           <mat-card-title>
-            <h3>Comments : </h3>
+            <h3>Comments :</h3>
           </mat-card-title>
         </mat-card-header>
         <mat-card-content>
           <div>
-            <p *ngFor="let cmt of dishDetail.comments">
-              {{ cmt.comment }}<br>
-              {{ cmt.rating }} stars <br>
-              -- {{ cmt.author }} {{ cmt.date | date }}<br><br>
+            <p *ngFor="let cmt of dish.comments">
+              {{ cmt.comment }}<br />
+              {{ cmt.rating }} stars <br />
+              -- {{ cmt.author }} {{ cmt.date | date }}<br /><br />
             </p>
             <br />
           </div>
-
-
-
         </mat-card-content>
-        <mat-card-actions>
-
-        </mat-card-actions>
+        <mat-card-actions> </mat-card-actions>
       </mat-card>
     </div>
   </div>
+</div>
