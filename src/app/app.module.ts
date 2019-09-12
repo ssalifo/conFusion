@@ -24,6 +24,10 @@ import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
 
+import { MatSelectModule } from "@angular/material/select";
+import { MatSlideToggleModule } from "@angular/material/slide-toggle";
+import { ReactiveFormsModule } from "@angular/forms";
+
 import { DishService } from "./services/dish.service";
 import { PromotionService } from "./services/promotion.service";
 import { AppRoutingModule } from "./app-routing/app-routing.module";
@@ -56,7 +60,10 @@ import { LeaderService } from "./services/leader.service";
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   providers: [DishService, PromotionService, LeaderService],
   entryComponents: [LoginComponent],
