@@ -1,0 +1,31 @@
+/* <style type="text/css"media="screen"> */
+$lt-gray: #ddd;
+$background-dark: #512DA8;
+$background-light: #9575CD;
+$background-pale: #D1C4E9;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+  margin: 0px auto;
+  padding: $pad-up-down $pad-left-right;
+}
+
+#images {
+  width: 100%;
+  /*margin: 0 auto;*/
+  @include zero-margin(0px, 0px);
+}
+
+#images p {
+  background: $background-light;
+  overflow: hidden;
+  padding: 0px;
+}
+
+#images p img {
+  margin: 10px;
+  float: left;
+}
+
+#images p span {
+  font-size: 12px;
+}
