@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <div fxFlex>
+  <div fxFlex *ngIf="dish">
     <div fxLayout="column" fxLayout.gt-sm="row">
       <div fxFlex="70">
         <h2>Our History</h2>
@@ -41,6 +41,11 @@
       </div>
     </div>
   </div>
+  <!--   <div [hidden]="dish">
+    <mat-spinner></mat-spinner>
+    <h4>Loading . . . Please Wait</h4>
+  </div> -->
+
 
   <div fxFlex>
     <mat-card>
@@ -55,35 +60,24 @@
     </mat-card>
   </div>
 
-
   <div fxFlex>
     <h2>Corporate Leadership</h2>
     <!--     <p>Display the details of the corporate leaders here</p -->
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>
 
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-list>
-          <mat-list-item *ngFor="let lead of leaders">
-            <img matListAvatar src="{{lead.image }}" alt="{{ lead.name }}">
-            <p matLine>
-              <span style="font-size:11px"> {{ lead.name }}
-                {{ lead.abbr | uppercase }}<br />
-                {{ lead.designation }} <br />
-                {{ lead.description }} <br />
-              </span>
-            </p>
-            <p matLine></p>
-          </mat-list-item>
-        </mat-list>
-      </mat-card-content>
+    <mat-list *ngIf="leaders">
+      <mat-list-item *ngFor="let lead of leaders">
+        <img mat-list-avatar src="{{lead.image }}" alt="{{ lead.name }}">
+        <h4 matLine> {{ lead.name }} {{ lead.abbr | uppercase }}</h4>
+        <p matLine> {{ lead.designation }} </p>
+        <p matLine> {{ lead.description }} </p>
+      </mat-list-item>
+    </mat-list>
+    <div [hidden]="leaders">
+      <mat-spinner></mat-spinner>
+      <h4>Loading . . . Please Wait</h4>
+    </div>
 
-      <mat-card-actions> </mat-card-actions>
-
-    </mat-card>
   </div>
+
 
 </div>
