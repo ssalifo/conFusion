@@ -3,6 +3,7 @@ import { Comment } from "./comment";
 
 export class Dish {
   id: string;
+  // id: number;
   name: string;
   image: string;
   category: string;
