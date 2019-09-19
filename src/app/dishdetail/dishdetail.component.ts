@@ -26,11 +26,8 @@ export class DishdetailComponent implements OnInit {
     // let id = this.route.snapshot.params["id"];
     const id = this.route.snapshot.params["id"];
     // this.dish = this.dishService.getDish(id);
-    this.dishService.getDish(id).then(dish => (this.dish = dish));
-    // this.dishService.getDish(id).then(dish => dish.id === id);
-    // this.dishService.getDishes().then(dish => (dish.id = id));
-    // this.leader = this.leaderService.getLeader(id);
-    // this.leaderService.getLeader(id).then(leader => (this.leader = leader));
+    // this.dishService.getDish(id).then(dish => (this.dish = dish));
+    this.dishService.getFeaturedDish().subscribe(dish => (this.dish = dish));
   }
 
   goBack(): void {
